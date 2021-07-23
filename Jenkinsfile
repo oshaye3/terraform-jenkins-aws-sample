@@ -45,7 +45,7 @@ pipeline {
 
         stage('Apply') {
             steps {
-                sh '/usr/local/bin/terraform apply -input=false'
+                sh '/usr/local/bin/terraform apply'
             }
         }
     }
