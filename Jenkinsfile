@@ -22,7 +22,7 @@ pipeline {
 				sh "/usr/local/bin/terraform --version"
                 sh '/usr/local/bin/terraform init -input=false'
                 sh '/usr/local/bin/terraform workspace select ${environment}'
-                sh "/usr/local/bin/terraform plan -input=false -out tfplan -var 'version=${params.version}'"
+                sh "/usr/local/bin/terraform plan -input=false'"
                 sh '/usr/local/bin/terraform show -no-color tfplan > tfplan.txt'
             }
         }
