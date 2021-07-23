@@ -19,7 +19,7 @@ pipeline {
                 script {
                     currentBuild.displayName = params.version
                 }
-				sh "/usr/local/bin/terraform --version"
+				sh '/usr/local/bin/terraform --version'
                 sh '/usr/local/bin/terraform init -input=false'
                 sh '/usr/local/bin/terraform workspace select ${environment}'
                 sh '/usr/local/bin/terraform plan -input=false'
@@ -45,6 +45,7 @@ pipeline {
 
         stage('Apply') {
             steps {
+			 
                 sh '/usr/local/bin/terraform apply'
             }
         }
